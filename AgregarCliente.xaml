@@ -1,0 +1,81 @@
+﻿<Controls:MetroWindow x:Class="BeLifeRe.AgregarCliente"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:bl="clr-namespace:BeLifeRe"
+        xmlns:s="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="Seguros BeLife - Agregar Cliente" Height="320" Width="650" ResizeMode="NoResize" Icon="Resources/Images/Logo BeLife.png">
+    <Window.Resources>
+        <Style x:Key="ChangeFontSize" TargetType="Grid">
+            <Style.Resources>
+                <Style x:Key="CommonStyle" TargetType="Control">
+                    <Setter Property="Margin" Value="10 15 10 15"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Setter Property="VerticalContentAlignment" Value="Center"/>
+                </Style>
+                <Style TargetType="Label" BasedOn="{StaticResource CommonStyle}">
+                    <Setter Property="FontSize" Value="14"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                </Style>
+                <Style TargetType="TextBox" BasedOn="{StaticResource CommonStyle}"/>
+                <Style TargetType="DatePicker" BasedOn="{StaticResource CommonStyle}"/>
+                <Style TargetType="ComboBox" BasedOn="{StaticResource CommonStyle}"/>
+                <Style TargetType="Button" BasedOn="{StaticResource CommonStyle}">
+                    <Setter Property="Margin" Value="10"/>
+                </Style>
+                <Style TargetType="CheckBox" BasedOn="{StaticResource CommonStyle}">
+                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                </Style>
+                <Style TargetType="GroupBox" BasedOn="{StaticResource CommonStyle}">
+                    <Setter Property="Margin" Value="10"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+    </Window.Resources>
+    <Grid Style="{StaticResource ChangeFontSize}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.7*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1.1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="0.8*"/>
+        </Grid.ColumnDefinitions>
+        <!-- Logo -->
+        <Image Grid.ColumnSpan="2" Margin="15" Source="Resources/Images/Logo BeLife.png"/>
+        <!-- Datos Cliente-->
+        <Label Content="Rut: " Grid.Row="1" Grid.Column="0" />
+        <TextBox Name="TbRut" Grid.Row="1" Grid.Column="1"/>
+        <Label Content="Nombres: " Grid.Row="2" Grid.Column="0"/>
+        <TextBox Name="TbNombres" Grid.Row="2" Grid.Column="1"/>
+        <Label Content="Apellidos: " Grid.Row="3" Grid.Column="0"/>
+        <TextBox Name="TbApellidos"  Grid.Row="3" Grid.Column="1"/>
+        <Label Content="Fecha nacimiento: " Grid.Row="1" Grid.Column="2"/>
+        <DatePicker Name="DtpFechaNacimiento" Grid.Row="1" Grid.Column="3"/>
+        <Label Content="Sexo: " Grid.Row="2" Grid.Column="2"/>
+        <Grid Grid.Row="2" Grid.Column="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <RadioButton Name="RbMasculino" Content="M" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="Sexo" IsChecked="True"/>
+            <RadioButton Name="RbFemenino" Content="F" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="Sexo"/>
+        </Grid>
+        <Label Content="Estado civil: " Grid.Row="3" Grid.Column="2"/>
+        <ComboBox Name="CbEstadoCivil" Grid.Row="3" Grid.Column="3"/>
+        <!-- Botones -->
+        <Button Name="BtnAgregar" Grid.Row="2" Grid.Column="4" Grid.RowSpan="2" Click="BtnAgregar_Click">
+            <Image Source="Resources/Images/ClientAdd.png" Stretch="Fill"/>
+        </Button>
+    </Grid>
+    </Controls:MetroWindow>

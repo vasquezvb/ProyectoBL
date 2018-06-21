@@ -1,0 +1,81 @@
+﻿<Controls:MetroWindow  x:Class="BeLifeRe.AgregarContrato"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:bl="clr-namespace:BeLifeRe"
+        xmlns:s="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="Seguros BeLife - Agregar Contrato" Height="450" Width="650" ResizeMode="NoResize" Icon="Resources/Images/Logo BeLife.png">
+    <Window.Resources>
+        <Style x:Key="ChangeFontSize" TargetType="Grid">
+            <Style.Resources>
+                <Style x:Key="CommonStyle" TargetType="Control">
+                    <Setter Property="Margin" Value="10 15 10 15"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Setter Property="VerticalContentAlignment" Value="Center"/>
+                </Style>
+                <Style TargetType="Label" BasedOn="{StaticResource CommonStyle}">
+                    <Setter Property="FontSize" Value="14"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                </Style>
+                <Style TargetType="TextBox" BasedOn="{StaticResource CommonStyle}"/>
+                <Style TargetType="DatePicker" BasedOn="{StaticResource CommonStyle}"/>
+                <Style TargetType="ComboBox" BasedOn="{StaticResource CommonStyle}"/>
+                <Style TargetType="Button" BasedOn="{StaticResource CommonStyle}">
+                    <Setter Property="Margin" Value="10"/>
+                </Style>
+                <Style TargetType="CheckBox" BasedOn="{StaticResource CommonStyle}">
+                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                </Style>
+                <Style TargetType="GroupBox" BasedOn="{StaticResource CommonStyle}">
+                    <Setter Property="Margin" Value="10"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+    </Window.Resources>
+    <Grid Style="{StaticResource ChangeFontSize}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+        <!-- Logo -->
+        <Image Grid.ColumnSpan="2" Margin="15" Source="Resources/Images/Logo BeLife.png"/>
+        <!-- Datos contrato-->
+        <Label Content="Inicio vigencia: " Grid.Row="1" Grid.Column="2"/>
+        <DatePicker Name="DtpInicioVigencia" Grid.Row="1" Grid.Column="3"/>
+        <Label Content="¿Declara salud?" Grid.Row="5"/>
+        <CheckBox Name="ChkSalud" Grid.Row="5" Grid.Column="1"/>
+        <Label Content="Prima anual: " Grid.Row="3" Grid.Column="0"/>
+        <TextBox Name="TbPrimaAnual"  Grid.Row="3" Grid.Column="1" IsEnabled="False"/>
+        <Label Content="Prima mensual: " Grid.Row="4" Grid.Column="0"/>
+        <TextBox Name="TbPrimaMensual"  Grid.Row="4" Grid.Column="1" IsEnabled="False"/>       
+        <GroupBox Header="Observaciones" Grid.Row="2" Grid.Column="2" Grid.RowSpan="4" Grid.ColumnSpan="2">
+            <TextBox Name="TbObservaciones" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" TextWrapping="Wrap"/>
+        </GroupBox>
+        <!-- Foreign keys -->
+        <Label Content="Rut cliente: " Grid.Row="1" Grid.Column="0" />
+        <TextBox Name="TbRut" Grid.Row="1" Grid.Column="1" TextChanged="TbRut_TextChanged"/>
+        <Label Content="Plan: " Grid.Row="2" Grid.Column="0"/>
+        <ComboBox Name="CbPlan" Grid.Row="2" Grid.Column="1" SelectionChanged="CbPlan_SelectionChanged"/>
+        <!-- Botones -->
+        <Button Name="BtnAgregar" Grid.Row="4" Grid.Column="4" Grid.ColumnSpan="2" Grid.RowSpan="2" Click="BtnAgregar_Click">
+            <Image Source="Resources/Images/ContractAdd.png" Stretch="Fill"/>
+        </Button>
+    </Grid>
+</Controls:MetroWindow>

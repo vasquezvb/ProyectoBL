@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="00594e9299ec461a9d9726be547a7f35" Name="Diagram1">
+        <EntityTypeShape EntityType="BeLife.Cliente" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BeLife.Comuna" Width="1.5" PointX="6" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BeLife.Contrato" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BeLife.EstadoCivil" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BeLife.MarcaModeloVehiculo" Width="1.5" PointX="5.25" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BeLife.MarcaVehiculo" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BeLife.ModeloVehiculo" Width="1.5" PointX="3" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BeLife.Plan" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BeLife.Region" Width="1.5" PointX="6" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BeLife.RegionComuna" Width="1.5" PointX="8.25" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BeLife.Sexo" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BeLife.TipoContrato" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BeLife.Vehiculo" Width="1.5" PointX="7.5" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BeLife.Vivienda" Width="1.5" PointX="10.5" PointY="3.125" IsExpanded="true" />
+        <AssociationConnector Association="BeLife.Cliente_EstadoCivil_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="BeLife.Cliente_Sexo_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="BeLife.Contrato_Cliente_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="BeLife.Comuna_RegionComuna_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="BeLife.Contrato_Plan_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="BeLife.Marca_MarcaModelo_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="BeLife.Modelo_MarcaModelo_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="BeLife.Vehiculo_MarcaModelo_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="BeLife.Plan_TipoContrato_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="BeLife.Region_RegionComuna_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="BeLife.Vivienda_RegionComuna_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="BeLife.Contrato_Vivienda" ManuallyRouted="false" />
+        <AssociationConnector Association="BeLife.ContratoVehiculo" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
